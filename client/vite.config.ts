@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8003/api", // Replace with your backend server
+        target: "https://job-listing-tber.onrender.com/api", // Replace with your backend server
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
