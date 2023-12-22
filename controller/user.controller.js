@@ -25,7 +25,6 @@ const userLogin = async (req, res, next) => {
       _id: user._id,
     };
     const token = jwt.sign(payload, process.env.JWT);
-    console.log("generate token in login",token);
     res.status(200)
     .cookie("token", token, {
       httpOnly: true,
