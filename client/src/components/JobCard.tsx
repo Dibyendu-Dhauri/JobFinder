@@ -16,7 +16,7 @@ const JobCard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/jobs");
+        const res = await axios.get("https://job-listing-tber.onrender.com/api/jobs");
         setJobs(res.data);
       } catch (error) {
         if (axios.isAxiosError(error)) {
