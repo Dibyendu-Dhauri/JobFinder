@@ -12,7 +12,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser())
-app.use(cors({origin:"*", credentials:true}))
+app.use(cors({origin:"https://tangerine-pegasus-a09e2c.netlify.app/", credentials:true}))
 
 
 // mongoDB connection
@@ -52,7 +52,7 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen( process.env.PORT, () => {
+app.listen( process.env.PORT || 8003, () => {
   connect();
-  console.log("server is starteds");
+  console.log("server is started");
 });
