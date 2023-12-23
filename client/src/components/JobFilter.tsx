@@ -40,7 +40,7 @@ const JobFilter: React.FC = () => {
   useEffect(() => {
     const getAllSkills = async () => {
       try {
-        const res = await axios.get("/api/jobs");
+        const res = await axios.get("https://job-listing-tber.onrender.com/api/jobs");
         const uniqueSkills = new Set<string>();
        const data: JobDetail[] = res.data;
         data?.forEach((job) =>
@@ -68,7 +68,7 @@ const JobFilter: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/jobs/filter", {
+        const res = await axios.get("https://job-listing-tber.onrender.com/api/jobs/filter", {
           params: {
             title: searchTitle,
             skills: searchSkills.join(","),
