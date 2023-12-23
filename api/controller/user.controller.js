@@ -29,7 +29,8 @@ const userLogin = async (req, res, next) => {
     .cookie("token", token, {
       httpOnly: true,
       secure: true,
-      expire: new Date() * 24 * 60 * 60 * 1000,
+      sameSite: "None",
+      // expire: new Date() * 24 * 60 * 60 * 1000,
     })
     .json({
       message: "User is logged in.", 
@@ -72,6 +73,7 @@ const userRegister = async (req, res, next) => {
       .cookie("token", token, {
         httpOnly: true,
         secure: true,
+        sameSite: "None",
         // expire: new Date() * 24 * 60 * 60 * 1000,
       })
       .json({
