@@ -36,13 +36,19 @@ export default function AddJob() {
     e.preventDefault();
     try {
       if (editJob) {
-        await axios.put(`${"api/jobs/edit/"}${editJob?._id}`, newJob);
-      }
-      if (!editJob) {
-        await axios.post("api/jobs/add", newJob, {
+        await axios.put(`${"https://job-listing-tber.onrender.com/api/jobs/edit/"}${editJob?._id}`, newJob,{
           headers: {
             "Content-Type": "application/json",
           },
+           withCredentials: true,
+        });
+      }
+      if (!editJob) {
+        await axios.post("https://job-listing-tber.onrender.com/api/jobs/add", newJob, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+           withCredentials: true,
         });
       }
       setNewJob({
