@@ -12,12 +12,12 @@ export default defineConfig(({mode})=>{
     plugins: [react()],
     server: {
       proxy: {
-         "/api": env.BASE_URL,
-        // "/api": {
-        //   target: env.BASE_URL, // Replace with your backend server
-        //   changeOrigin: true,
-        //   secure: false,
-        // },
+         // "/api": env.BASE_URL,
+        "/api": {
+          target: env.BASE_URL, // Replace with your backend server
+          changeOrigin: true,
+          secure: false,
+        },
       },
     },
   }
