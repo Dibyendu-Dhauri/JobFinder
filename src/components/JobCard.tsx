@@ -8,6 +8,8 @@ import { AuthContext } from "../context/AuthContext";
 import { JobsContext } from "../context/JobsContext";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+ // import dotenv from 'dotenv'
+ // dotenv.config()
 
 const JobCard: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ const JobCard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/jobs");
+        const res = await axios.get("https://jobfinder-api-7rcu.onrender.com/api/jobs");
         setJobs(res.data);
       } catch (error) {
         if (axios.isAxiosError(error)) {
