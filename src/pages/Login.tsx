@@ -16,7 +16,7 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/login", loginData, {
+      const res = await axios.post("https://jobfinder-api-7rcu.onrender.com/api/auth/login", loginData, {
         headers: {
           "Content-Type": "application/json",
         },
