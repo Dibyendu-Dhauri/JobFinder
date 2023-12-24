@@ -31,7 +31,7 @@ export default function Details() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${"/api/jobs/details/"}${jobId}`);
+        const res = await axios.get(`${"https://jobfinder-api-7rcu.onrender.com/api/jobs/details/"}${jobId}`);
         setJobDetails(res.data);
       } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
