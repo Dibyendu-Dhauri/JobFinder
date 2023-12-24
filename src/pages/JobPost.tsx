@@ -36,7 +36,7 @@ export default function AddJob() {
     e.preventDefault();
     try {
       if (editJob) {
-        await axios.put(`${"/api/jobs/edit/"}${editJob?._id}`, newJob, {
+        await axios.put(`${"https://jobfinder-api-7rcu.onrender.com/api/jobs/edit/"}${editJob?._id}`, newJob, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -44,7 +44,7 @@ export default function AddJob() {
         });
       }
       if (!editJob) {
-        await axios.post("/api/jobs/add", newJob, {
+        await axios.post("https://jobfinder-api-7rcu.onrender.com/api/jobs/add", newJob, {
           headers: {
             "Content-Type": "application/json",
           },
