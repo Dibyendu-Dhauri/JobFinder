@@ -18,7 +18,7 @@ const JobCard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${process.env.BASE_URL}${"/api/jobs"}`);
+        const res = await axios.get(`${import.meta.env.BASE_URL}${"/api/jobs"}`);
         // const res = await axios.get("https://jobfinder-api-7rcu.onrender.com/api/jobs");
         setJobs(res.data);
       } catch (error) {
