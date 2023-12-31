@@ -18,7 +18,7 @@ export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://job-listing-tber.onrender.com/api/auth/register", registerData, {
+      const res = await axios.post("/api/auth/register", registerData, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import jobPost from '../assets/jobPost.jpg'
+import jobPost from "../assets/jobPost.jpg";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 // import { AuthContext } from "../context/AuthContext";
@@ -36,8 +36,7 @@ export default function AddJob() {
     e.preventDefault();
     try {
       if (editJob) {
-<<<<<<< HEAD
-        await axios.put(`${"/api/jobs/edit/"}${editJob?._id}`, newJob,{
+        await axios.put(`${"/api/jobs/edit/"}${editJob?._id}`, newJob, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -50,21 +49,6 @@ export default function AddJob() {
             "Content-Type": "application/json",
           },
           withCredentials: true,
-=======
-        await axios.put(`${"https://job-listing-tber.onrender.com/api/jobs/edit/"}${editJob?._id}`, newJob,{
-          headers: {
-            "Content-Type": "application/json",
-          },
-           withCredentials: true,
-        });
-      }
-      if (!editJob) {
-        await axios.post("https://job-listing-tber.onrender.com/api/jobs/add", newJob, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-           withCredentials: true,
->>>>>>> acc1efbc67b1c505b8fc832ea1c8e42e8f6696cb
         });
       }
       setNewJob({

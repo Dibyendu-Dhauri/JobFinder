@@ -25,26 +25,19 @@ const userLogin = async (req, res, next) => {
       _id: user._id,
     };
     const token = jwt.sign(payload, process.env.JWT);
-    res.status(200)
-    .cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-<<<<<<< HEAD
-      // expire: new Date() * 24 * 60 * 60 * 1000,
-      sameSite: "None",
-      // domain: "http://localhost:5173/",
-      // path: '/'
-=======
-      sameSite: "None",
-      // expire: new Date() * 24 * 60 * 60 * 1000,
->>>>>>> acc1efbc67b1c505b8fc832ea1c8e42e8f6696cb
-    })
-    .json({
-      message: "User is logged in.", 
-      userName: user.userName,
+    res
+      .status(200)
+      .cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None",
+      })
+      .json({
+        message: "User is logged in.",
+        userName: user.userName,
         email: user.email,
         _id: user.id,
-    });
+      });
   } catch (error) {
     next(error);
   }
